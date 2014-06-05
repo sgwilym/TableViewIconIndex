@@ -52,10 +52,8 @@ import UIKit
         
         self.addConstraints(constraintsToApply)
         
-        var counter = 0
         var groupAbove: TableViewIconIndexGroup?
-        for group in indexGroups! {
-            ++counter
+        for (index, group) in enumerate(indexGroups!) {
             indexGroupsCenteredView.addSubview(group)
             var verticalConstraintFormat: String
             var views: Dictionary<String, AnyObject>
@@ -67,7 +65,7 @@ import UIKit
                 verticalConstraintFormat = "V:|-groupSpacing-[group]"
                 views = ["group": group]
             }
-            if counter == indexGroups!.count {
+            if index == indexGroups!.count - 1{
                 verticalConstraintFormat += "|"
             }
             let horizontalConstraintFormat = "|[group]-rightSpacing-|"

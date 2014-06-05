@@ -39,9 +39,7 @@ class TableViewIconIndexGroup: UIView {
             itemAbove = iconImageView
         }
         
-        var counted = 0
-        for item in self.items {
-            ++counted
+        for (index, item) in enumerate(items) {
             self.addSubview(item)
             
             var verticalConstraintFormat: String
@@ -54,7 +52,7 @@ class TableViewIconIndexGroup: UIView {
                 verticalConstraintFormat = "V:|[item]"
                 viewsBindingDictionary = ["item": item]
             }
-            if counted == self.items.count {
+            if index == self.items.count - 1 {
                 verticalConstraintFormat += "|"
             }
             
