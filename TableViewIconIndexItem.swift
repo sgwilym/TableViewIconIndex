@@ -10,9 +10,9 @@ import UIKit
 
 @objc class TableViewIconIndexItem : UIView {
     
-    var icon: UIImage?
-    var initial: String? = "?"
-    var indexPath: NSIndexPath
+    let icon: UIImage?
+    let initial: String? = "?"
+    let indexPath: NSIndexPath
     
     init(icon: UIImage?, initial: String?, indexPath: NSIndexPath) {
         

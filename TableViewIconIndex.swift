@@ -85,10 +85,13 @@ import UIKit
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        let item = self.hitTest(touches.anyObject().locationInView(self), withEvent: nil)
-        if item.isKindOfClass(TableViewIconIndexItem) {
-            let indexItem = item as TableViewIconIndexItem
-            self.delegate!.jumpToSectionWithIndexPath(indexItem.indexPath)
+        let touched = self.hitTest(touches.anyObject().locationInView(self), withEvent: nil)
+        println(touched)
+        if let view = touched {
+            if view.isKindOfClass(TableViewIconIndexItem) {
+                let indexItem = touched as TableViewIconIndexItem
+                self.delegate!.jumpToSectionWithIndexPath(indexItem.indexPath)
+            }
         }
     }
     

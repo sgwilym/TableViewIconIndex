@@ -10,8 +10,8 @@ import UIKit
 
 class TableViewIconIndexGroup: UIView {
 
-    var items: TableViewIconIndexItem[]
-    var icon: UIImage?
+    let items: TableViewIconIndexItem[]
+    let icon: UIImage?
     
     init(items: TableViewIconIndexItem[], icon: UIImage?) {
         
